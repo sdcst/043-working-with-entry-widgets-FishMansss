@@ -22,29 +22,35 @@ def mult(event):
     e[2].delete(0,tk.END)
     e[2].insert(0,answer)
 
-def divi():
+def divi(event):
+    print(event)
     x = e[0].get()
     y = e[1].get()
     x = int(x)
     y = int(y)
+    answer = x/y
     e[2].delete(0,tk.END)
-    e[2].insert(0,x/y)
+    e[2].insert(0,answer)
     
-def addi():
+def addi(event):
+    print(event)
     x = e[0].get()
     y = e[1].get()
     x = int(x)
     y = int(y)
+    answer = x+y
     e[2].delete(0,tk.END)
-    e[2].insert(0,x+y)
+    e[2].insert(0,answer)
     
-def subt():
+def subt(event):
+    print(event)
     x = e[0].get()
     y = e[1].get()
     x = int(x)
     y = int(y)
+    answer = x-y
     e[2].delete(0,tk.END)
-    e[2].insert(0,x-y)
+    e[2].insert(0,answer)
     
 
 l = []
@@ -63,9 +69,9 @@ b.append(tk.Button(w,text="+"))
 b.append(tk.Button(w,text="-"))
 b.append(tk.Button(w,text="÷"))
 b[0].bind("<Button-1>",mult)
-b[1].bind("<Button-1>",divi)
-b[2].bind("<Button-1>",addi)
-b[3].bind("<Button-1>",subt)
+b[1].bind("<Button-1>",addi)
+b[2].bind("<Button-1>",subt)
+b[3].bind("<Button-1>",divi)
 l[2].grid(row=1,column=1,columnspan=4)
 l[0].grid(row=2,column=1,columnspan=2)
 l[1].grid(row=2,column=3,columnspan=2)
